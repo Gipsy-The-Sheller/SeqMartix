@@ -2,6 +2,8 @@
 
 This PyQt5 GUI is to facilitize the sort of multigenes dataset.
 
+![image](https://github.com/user-attachments/assets/242cf17f-19bf-4575-bbb9-ef874fe567f1)
+
 In multigene phylogeny (especially a small-scale dataset), it usually takes a lot of time to rename sequences belonging to a same isolation or voucher. The author himself was once very annoyed about it, so free-concatenator is given birth.
 
 In this PyQt5 GUI, you can load lots of FASTA sequences from multiple files and create a specific-scale dataset (each column refers to a partition, while each row refers to a single isolate or voucher). Then you may drag each FASTA sequence from the left column to a specific grid of the dataset table to sort sequences fast. What's more, directly fill in a grid with NCBI Accession (Genebank or Refseq or etc) is okay. Then press the 'Download from NCBI' button and the program may try to download all accession's fasta sequences and automatically replace the original grids with the sequences.
