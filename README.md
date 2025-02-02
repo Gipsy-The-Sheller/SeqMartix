@@ -12,6 +12,12 @@ If you have a ready-made accession table, you can paste a column directly to the
 
 Once your dataset is ready, press 'Export Files' to get fasta files of each partition, which can be aligned and concatenated directly.
 
+# Dependance
+
+```plain
+pip install PyQt5, Bio
+```
+
 # Acknowledgements
 
 I thank Cursor Team for providing a wonderful AI-assisted IDE, where I quickly formed the initial version of this script in about 15 mins with the help of Claude 3.5 sonnet, in my busy time.
