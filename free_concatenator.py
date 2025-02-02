@@ -7,7 +7,6 @@ from PyQt5.QtCore import Qt, QEvent, QThread, pyqtSignal
 from Bio import SeqIO, Entrez
 import os
 
-
 # Set your email here
 Entrez.email = "your_email@example.com"
 
