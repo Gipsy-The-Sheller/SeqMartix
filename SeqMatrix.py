@@ -111,7 +111,7 @@ class CustomTableWidget(QTableWidget):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Sequence Concatenator")
+        self.setWindowTitle("SeqMatrix")
         self.sequences = {}
         self.initUI()
         
