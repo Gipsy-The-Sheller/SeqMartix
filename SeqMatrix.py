@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QPushButton, QListWidget, QTableWidget,
                              QTableWidgetItem, QFileDialog, QLabel, QListWidgetItem,
                              QInputDialog, QMessageBox, QSplitter, QLineEdit, QDialog, QTextEdit)
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, QEvent, QThread, pyqtSignal
 from Bio import SeqIO, Entrez
 import os
@@ -112,6 +113,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("SeqMatrix")
+        self.setWindowIcon(QIcon("favicon.svg"))
         self.sequences = {}
         self.initUI()
         
@@ -383,77 +385,77 @@ class MainWindow(QMainWindow):
                     print(f"[LOG] Exported partition file: {file_path}")
                         
             # Export NEXUS file
-            nexus_path = os.path.join(save_dir, "concatenated.nex")
-            with open(nexus_path, "w", encoding='utf-8') as f:
-                f.write("#NEXUS\n")
-                f.write("BEGIN DATA;\n")
+        #     nexus_path = os.path.join(save_dir, "concatenated.nex")
+        #     with open(nexus_path, "w", encoding='utf-8') as f:
+        #         f.write("#NEXUS\n")
+        #         f.write("BEGIN DATA;\n")
                 
-                # Calculate total chars and get sequence lengths
-                total_chars = 0
-                col_lengths = []
-                for col in range(self.table.columnCount()):
-                    col_len = 0
-                    for row in range(self.table.rowCount()):
-                        item = self.table.item(row, col)
-                        if item:
-                            sequence_name = item.text()
-                            sequence = self.sequences.get(sequence_name)
-                            if sequence:
-                                col_len = len(sequence)
-                                break
-                    col_lengths.append(col_len)
-                    total_chars += col_len
+        #         # Calculate total chars and get sequence lengths
+        #         total_chars = 0
+        #         col_lengths = []
+        #         for col in range(self.table.columnCount()):
+        #             col_len = 0
+        #             for row in range(self.table.rowCount()):
+        #                 item = self.table.item(row, col)
+        #                 if item:
+        #                     sequence_name = item.text()
+        #                     sequence = self.sequences.get(sequence_name)
+        #                     if sequence:
+        #                         col_len = len(sequence)
+        #                         break
+        #             col_lengths.append(col_len)
+        #             total_chars += col_len
                 
-                # Get valid sequence count
-                valid_rows = 0
-                for row in range(self.table.rowCount()):
-                    for col in range(self.table.columnCount()):
-                        item = self.table.item(row, col)
-                        if item and self.sequences.get(item.text()):
-                            valid_rows += 1
-                            break
+        #         # Get valid sequence count
+        #         valid_rows = 0
+        #         for row in range(self.table.rowCount()):
+        #             for col in range(self.table.columnCount()):
+        #                 item = self.table.item(row, col)
+        #                 if item and self.sequences.get(item.text()):
+        #                     valid_rows += 1
+        #                     break
                             
-                f.write(f"DIMENSIONS NTAX={valid_rows} NCHAR={total_chars};\n")
-                f.write("FORMAT DATATYPE=DNA MISSING=? GAP=-;\n")
-                f.write("MATRIX\n")
+        #         f.write(f"DIMENSIONS NTAX={valid_rows} NCHAR={total_chars};\n")
+        #         f.write("FORMAT DATATYPE=DNA MISSING=? GAP=-;\n")
+        #         f.write("MATRIX\n")
                 
-                # Output sequence matrix
-                for row in range(self.table.rowCount()):
-                    seq = ""
-                    has_sequence = False
-                    for col in range(self.table.columnCount()):
-                        item = self.table.item(row, col)
-                        if item:
-                            sequence_name = item.text()
-                            sequence = self.sequences.get(sequence_name)
-                            if sequence:
-                                seq += sequence
-                                has_sequence = True
-                            else:
-                                seq += "?" * col_lengths[col]  # Fill with '?' for missing genes
-                        else:
-                            seq += "?" * col_lengths[col]  # Fill with '?' for missing genes
+        #         # Output sequence matrix
+        #         for row in range(self.table.rowCount()):
+        #             seq = ""
+        #             has_sequence = False
+        #             for col in range(self.table.columnCount()):
+        #                 item = self.table.item(row, col)
+        #                 if item:
+        #                     sequence_name = item.text()
+        #                     sequence = self.sequences.get(sequence_name)
+        #                     if sequence:
+        #                         seq += sequence
+        #                         has_sequence = True
+        #                     else:
+        #                         seq += "?" * col_lengths[col]  # Fill with '?' for missing genes
+        #                 else:
+        #                     seq += "?" * col_lengths[col]  # Fill with '?' for missing genes
                     
-                    row_item = self.table.verticalHeaderItem(row)
-                    row_name = row_item.text() if row_item else f"Sequence_{row+1}"
-                    if has_sequence:  # Only output rows with at least one sequence
-                        f.write(f"{row_name:<30} {seq}\n")
+        #             row_item = self.table.verticalHeaderItem(row)
+        #             row_name = row_item.text() if row_item else f"Sequence_{row+1}"
+        #             if has_sequence:  # Only output rows with at least one sequence
+        #                 f.write(f"{row_name:<30} {seq}\n")
                         
-                f.write(";\nEND;\n")
+        #         f.write(";\nEND;\n")
                 
-                # Add partition information
-                f.write("\nBEGIN SETS;\n")
-                start = 1
-                for col in range(self.table.columnCount()):
-                    if col_lengths[col] > 0:  # Only output partitions with sequences
-                        end = start + col_lengths[col] - 1
-                        partition_item = self.table.horizontalHeaderItem(col)
-                        partition_name = partition_item.text() if partition_item else f"Partition_{col+1}"
-                        f.write(f"CHARSET {partition_name} = {start}-{end};\n")
-                        start = end + 1
-                f.write("END;\n")
+        #         # Add partition information
+        #         f.write("\nBEGIN SETS;\n")
+        #         start = 1
+        #         for col in range(self.table.columnCount()):
+        #             if col_lengths[col] > 0:  # Only output partitions with sequences
+        #                 end = start + col_lengths[col] - 1
+        #                 partition_item = self.table.horizontalHeaderItem(col)
+        #                 partition_name = partition_item.text() if partition_item else f"Partition_{col+1}"
+        #                 f.write(f"CHARSET {partition_name} = {start}-{end};\n")
+        #                 start = end + 1
+        #         f.write("END;\n")
                 
-            print(f"[LOG] Exported NEXUS file: {nexus_path}")
+        #     print(f"[LOG] Exported NEXUS file: {nexus_path}")
             
         except Exception as e:
             print(f"[ERROR] Error exporting files: {str(e)}")

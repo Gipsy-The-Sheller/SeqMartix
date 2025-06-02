@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.41 127.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c5b2d4;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #c3b59d;
+      }
+
+      .cls-3 {
+        fill: #99cbb9;
+      }
+
+      .cls-4 {
+        fill: #ebb780;
+      }
+
+      .cls-14 {
+        stroke: #231815;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-14, .cls-10 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #a2b27a;
+      }
+
+      .cls-6 {
+        fill: #afbbc6;
+      }
+
+      .cls-7 {
+        fill: #b6b4b9;
+      }
+
+      .cls-8 {
+        fill: #da9abb;
+      }
+
+      .cls-9 {
+        fill: #babf9e;
+      }
+
+      .cls-11 {
+        fill: #b4ce87;
+      }
+
+      .cls-12 {
+        fill: #8fc0dd;
+      }
+
+      .cls-13 {
+        fill: #8cba35;
+      }
+    </style>
+  </defs>
+  <rect class="cls-12" x=".01" width="31.85" height="25.48"/>
+  <rect class="cls-1" x="31.86" width="31.85" height="25.48"/>
+  <rect class="cls-8" x="63.71" width="31.85" height="25.48"/>
+  <rect class="cls-4" x="95.55" width="31.85" height="25.48"/>
+  <rect class="cls-3" x=".01" y="25.48" width="31.85" height="25.48"/>
+  <rect class="cls-6" x="31.86" y="25.48" width="31.85" height="25.48"/>
+  <rect class="cls-7" x="63.71" y="25.48" width="31.85" height="25.48"/>
+  <rect class="cls-9" x="95.55" y="25.48" width="31.85" height="25.48"/>
+  <rect class="cls-11" x=".01" y="50.96" width="31.85" height="25.48"/>
+  <rect class="cls-10" x="31.86" y="50.96" width="31.85" height="25.48"/>
+  <rect class="cls-2" x="63.71" y="50.96" width="31.85" height="25.48"/>
+  <rect class="cls-14" x="95.55" y="51.11" width="31.36" height="25.43"/>
+  <rect class="cls-13" x=".01" y="76.43" width="31.85" height="25.48"/>
+  <rect class="cls-5" x="31.86" y="76.43" width="31.85" height="25.48"/>
+  <rect class="cls-14" x="63.71" y="76.43" width="31.85" height="25.48"/>
+  <rect class="cls-14" x="95.55" y="76.53" width="31.36" height="25.43"/>
+  <rect class="cls-14" x=".5" y="101.91" width="31.36" height="25.48"/>
+  <rect class="cls-14" x="31.86" y="101.91" width="31.85" height="25.48"/>
+  <rect class="cls-14" x="63.71" y="101.91" width="31.85" height="25.48"/>
+  <rect class="cls-14" x="95.55" y="101.96" width="31.36" height="25.43"/>
+</svg>
