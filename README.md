@@ -1,3 +1,7 @@
+> [!NOTE]
+>
+> A new version of SeqMatrix is implemented in [YR-MPE](https://github.com/Gipsy-The-Sheller/YR-MPE) with better user experience design, and will be maintained with the whole YR-MPE package. Thus, this repository will be archived.
+
 # SeqMatrix
 
 This PyQt5 GUI is to facilitize the sort of multigenes dataset.
@@ -12,7 +16,7 @@ If you have a ready-made accession table, you can paste a column directly to the
 
 Once your dataset is ready, press 'Export Files' to get fasta files of each partition, which can be aligned and concatenated directly.
 
-# Dependance
+# Dependancies
 
 ```plain
 pip install PyQt5, Bio
